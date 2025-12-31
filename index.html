@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おみくじゲーム</title>
+  <title>しょーんみくじゲーム</title>
   <style>
     body {
       display: flex;
@@ -20,9 +20,9 @@
       text-align: center;
     }
     #result img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 300px;
+      height: 225px;
+      border-radius: 5%;
       margin: 20px 0;
     }
     #message {
@@ -51,21 +51,23 @@
   </style>
 </head>
 <body>
+  <img id="top-image" src="https://github.com/user-attachments/assets/ef5c2b65-6c38-4314-bf33-59b029fb8280" alt="追加画像" style="width: 300px; height: 225px; border-radius: 5%; margin: 20px 0;">
   <button id="draw-button">𖤐しょーんみくじを引く𖤐</button>
   <div id="result">
     <p id="message"></p>
-    <img id="result-image" src="https://github.com/user-attachments/assets/a879ea7d-4fa3-4185-b781-f146cf329be3" alt="おみくじ結果">
+    <img id="result-image" src="https://github.com/user-attachments/assets/90db8bd3-f6e1-4818-89fd-85b947cb9051" alt="おみくじ結果">
     <button id="retry-button">もう一回ひいとく？</button>
   </div>
 
   <script>
     const results = [
-      "大吉",
-      "中吉",
+      "大たい吉",
+      "ちゅー吉",
       "しょーん吉",
-      "末吉",
+      "すげぇ吉",
       "凶と見せかけて大吉",
       "秘密基地？",
+      "諭吉w",
       "強w"
     ];
 
@@ -73,6 +75,7 @@
     const retryButton = document.getElementById('retry-button');
     const resultDiv = document.getElementById('result');
     const message = document.getElementById('message');
+    const topImage = document.getElementById('top-image');
 
     drawButton.addEventListener('click', () => {
       const randomIndex = Math.floor(Math.random() * results.length);
@@ -81,12 +84,14 @@
       resultDiv.style.display = 'block';
       drawButton.style.display = 'none';
       retryButton.style.display = 'block';
+      topImage.style.display = 'none';
     });
 
     retryButton.addEventListener('click', () => {
       resultDiv.style.display = 'none';
       drawButton.style.display = 'block';
       retryButton.style.display = 'none';
+      topImage.style.display = 'block';
     });
   </script>
 </body>
